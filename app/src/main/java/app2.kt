@@ -189,6 +189,7 @@ fun main(){
         }
     }
 
+//    Calcularea aria unui dreptunghi laturile caruia a si b sunt date de la tastatura.
     fun dreptunghi(){
         var a = readln().toDouble();
         var b = readln().toDouble();
@@ -197,6 +198,26 @@ fun main(){
     }
    dreptunghi();
 
+//    Variabila v determina numarul de ani. Afisati calificativul “tinar” daca v<=18, “mediu” daca v<=50,”in virsta” daca v>50
+    fun virsta() {
+        var ani = readln().toInt();
+
+        when (ani) {
+            in 0..17 -> println("tinar")
+            18 -> println("mediu")
+            in 18..50 -> println("medie")
+            else -> println("în vărstă")
+        }
+    }
+    virsta();
+
+//    Convertiti lungimea l din cm in m.
+    fun metrii(a:Int = 100, b:Int = 50, c: Int = 1000){
+        println(a * 100);
+        println(b * 100);
+        println(c * 100);
+    }
+    metrii();
 
 }
 
