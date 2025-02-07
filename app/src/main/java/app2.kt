@@ -219,5 +219,129 @@ fun main(){
     }
     metrii();
 
+    fun nota(){
+        val notaPrimita = readln().toInt();
+
+        if(notaPrimita === 1 && notaPrimita >= 4) {
+            println("nesatisfacator")
+        } else if (notaPrimita > 4 && notaPrimita <= 8){
+            println("satisfacator")
+        } else if (notaPrimita > 8 && notaPrimita <= 10){
+            println("excelent")
+        }
+
+    }
+    nota();
+
+//    Diapazonul poate sa nu reprezinte cifre dar si litere
+    val range = 1..5
+    val range_first = "a".."d";
+
+//    Cu downTo se poate construi o funcție în ordine descrescătoare
+    val range1 =  1..5      // 1 2 3 4 5
+    val range2 =  5 downTo 1    // 5 4 3 2 1
+
+//    Inca o functie specială este step care oferă posibilitate de da o ordine a pasilor
+    val range3 = 1..10 step 2           // 1 3 5 7 9
+    val range4 = 10 downTo 1 step 3     // 10 7 4 1
+
+//    Inca o functie ste untill ea ne oferă posibilitatea să nu includem granița de sus
+    val range5 = 1 until 9          // 1 2 3 4 5 6 7 8
+    val range6 = 1 until 9 step 2   // 1 3 5 7
+
+//    Despre "in" întoarce true dacă este în diapazon și false dacă nu este,  "!in"  întoarce true dacă nu este în diapzon
+
+    val range7 = 1..5
+
+    var isInRange = 5 in range7
+    println(isInRange)      // true
+
+    isInRange = 86 in range7
+    println(isInRange)      // false
+
+    var isNotInRange = 6 !in range7
+    println(isNotInRange)   // true
+
+    isNotInRange = 3 !in range7
+    println(isNotInRange)   // false
+
+//    Cu ajutorul ciclurilor se poate de ales diapazonul
+    val range8 = 5 downTo 1
+    for(c in range1) print(c)   // 54321
+    println()
+
+    val range9 = 'a'..'d'
+    for(c in range2) print(c)   // abcd
+    println()
+
+    for(c in 1..9) print(c)     // 123456789
+    println()
+
+    for(c in 1 until 9) print(c)    // 12345678
+    println()
+
+    for(c in 1..9 step 2) print(c)  // 13579
+
+//    Array cu cifre intregi
+    val numbers: Array<Int>
+
+//    Cu ajutorul functieii arrayOf() se poate de oferit o mulțime de numere
+    val numbers_off: Array<Int> = arrayOf(1, 2, 3, 4, 5)
+
+//    Se poate de folosit tipizatia si de oferit deodată o multime
+    val numbers_on = arrayOf(1, 2, 3, 4, 5)
+
+//  Se transmite un Array gol de elemente cu metoda arraysOfNulls().
+    val numbers_null = arrayOfNulls<Int>(3)  // [null, null, null]
+
+// Se poate de creat un Array cu valori prestabilitie
+    val numbers_of = Array(3, {5}) // [5, 5, 5]
+
+//    Dar sunt si declaratii mai complexe
+    var p = 1;
+    val numbers_arr1 = Array(3, { p++ * 2}) // [2, 4, 6]
+
+//    Indexul elementul poate fi obținut din paranteze patrate si de fiecare data incepe cu 0
+    val numbers_index = arrayOf(1, 2, 3, 4, 5)
+    val n = numbers_index[1]  // получаем второй элемент  n=2
+    println(n)
+    numbers_index[2] = 7      // переустанавливаем третий элемент
+    println("numbers[2] = ${numbers_index[2]}") // numbers[2] = 7
+
+//    Cu ajutorul lui size putem afla marimea acestui Array
+    val numbers_full  = arrayOf(1, 2, 3, 4, 5);
+    println(numbers_full.size)   // 5
+
+    val people = arrayOf("Tom", "Bob", "Sam")
+    println(people.size)   // 3
+
+//    Cu ajutorul ciclului for putem afla si organiza operatii logice cu masivul
+    val numbers_in = arrayOf(1, 2, 3, 4, 5)
+    for(number in numbers_in){
+        print("$number \t")
+    }
+
+//    Astfel putem rasfoi si in celelate tipuri de masivuri
+    val people_of = arrayOf("Tom", "Sam", "Bob")
+    for(person in people_of){
+        print("$person \t")
+    }
+
+//    Verificam daca elementul este in masiv cu ajutorul lui in
+    val numbers_is = arrayOf(1, 2, 3, 4, 5)
+
+    println(4 in numbers_is)       // true
+    println(2 !in numbers_is)      // false
+
+//    Sunt diferite tipuri de Array adica massivuri
+    val numbers_int: IntArray = intArrayOf(1, 2, 3, 4, 5)
+    val doubles: DoubleArray = doubleArrayOf(2.4, 4.5, 1.2)
+
+//    Intializarea acestora
+    val numbers_arr2 = IntArray(3, {5})
+    val doubles_arr = DoubleArray(3, {1.5})
+
+
 }
+
 
